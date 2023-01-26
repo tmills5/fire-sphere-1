@@ -19,6 +19,9 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  "resolutions": {
+    "react-scripts/postcss-preset-env/postcss-custom-properties": "^13.1.0"
+  },
   "scripts": {
     "start": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
