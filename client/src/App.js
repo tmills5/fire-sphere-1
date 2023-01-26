@@ -1,25 +1,81 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useEffect, useState} from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+// Components
+import Nav from './components/Nav';
+import Home from './components/Home';
+import Login from './components/Login';
+import Logout from './components/Logout';
+
+
+const App = () => {
+  const [user, setUser] = useState('');
+  // const [errors, setErrors] = useState([]);
+
+  // const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // authenticating user on page load
+    fetch('/me')
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => {
+          setUser(user);
+        });
+      }
+    })
+  },[]);
+
+  // const options = {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // }
+
+// !Not sure why I have to use full path on fetch
+  // const fetchStations = () => {
+  //   fetch('http://localhost:3000/stations', options)
+  //     .then(res => res.json())
+  //     .then(  //stationsData => console.log("Stations: ", stationsData)
+  //       // stationsData => setStations(stationsData)
+  //     );
+  // } 
+
+  // const fetchVehicles = () => {
+  //   fetch('http://localhost:3000/vehicles', options)
+  //     .then(res => res.json())
+  //     .then(  //vehiclesData => console.log("Vehicles: ", vehiclesData)
+  //       // vehiclesData => setVehicles(vehiclesData)
+  //     )
+  // }
+
+  // const fetchEmployees = () => {
+  //   fetch('http://localhost:3000/employees', options)
+  //     .then(res => res.json())
+  //     .then(  //employeesData => console.log("Employees: ", employeesData)
+  //       // employeesData => setEmployees(employeesData)
+  //     )
+  // }
+
+// console.log(stations)
+console.log(user)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // <AuthConsumer>
+      <div className="App">
+        <Nav user={user} setUser={setUser} />
+        <Routes>
+          <Route path='/' element={<Home /> } />
+          <Route path='/login' element={<Login user={user} setUser={setUser}/>} />
+          <Route path='/logout' element={<Logout setUser={setUser}/>} />
+        </Routes>
+      </div>
+    // </AuthConsumer>
+  )
 }
 
-export default App;
+export default App
