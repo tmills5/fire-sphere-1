@@ -14,8 +14,6 @@ const Nav = ({user, setUser}) => {
 
 console.log("Nav user: ", user)
 
-
-
   return (
     <nav>
       <ul>
