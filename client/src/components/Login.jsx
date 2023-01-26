@@ -16,8 +16,6 @@ import { useState } from 'react';
 import logo from '../assets/images/fireLogoBlackLetters.png';
 
 
-
-
 const Login = ({setUser}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
