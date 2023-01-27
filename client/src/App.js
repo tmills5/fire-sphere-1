@@ -78,4 +78,4 @@ console.log(user)
   )
 }
 
-export default App
+export default App;
