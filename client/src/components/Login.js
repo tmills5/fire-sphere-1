@@ -1,4 +1,4 @@
-// import React from 'react';
+import React, { useState } from 'react';
 import {
   MDBBtn,
   MDBContainer,
@@ -7,15 +7,11 @@ import {
   MDBCardImage,
   MDBRow,
   MDBCol,
-  MDBIcon,
   MDBInput
 }
 from 'mdb-react-ui-kit';
-
-import { useState } from 'react';
 import logo from '../assets/images/fireLogoBlackLetters.png';
 
-import React from 'react';
 
 
 const Login = ({setUser}) => {
@@ -26,13 +22,14 @@ const Login = ({setUser}) => {
   const onSubmit = e => {
     e.preventDefault();
 
+
     let user = {
       username,
       password
   }
 
-  fetch('/login',{
-    method:'POST',
+  fetch('/login', {
+    method: "POST",
     headers:{'Content-Type': 'application/json'},
     body:JSON.stringify(user)
   })
@@ -89,6 +86,7 @@ const Login = ({setUser}) => {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
               />
+              {<p style={{ color: "red" }}>{errors}</p>}
 
             <MDBBtn className="mb-4 px-5" color='dark' size='lg'onClick={onSubmit}>Login</MDBBtn>
             <a className="small text-muted" href="#!">Forgot password?</a>
