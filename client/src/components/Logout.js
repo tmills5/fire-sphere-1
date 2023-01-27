@@ -1,6 +1,7 @@
+import React from 'react';
+
+
 const Logout = ({setUser}) => {
-
-
 
   return (
     <div>

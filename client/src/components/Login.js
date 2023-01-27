@@ -15,6 +15,8 @@ from 'mdb-react-ui-kit';
 import { useState } from 'react';
 import logo from '../assets/images/fireLogoBlackLetters.png';
 
+import React from 'react';
+
 
 const Login = ({setUser}) => {
   const [username, setUsername] = useState("");

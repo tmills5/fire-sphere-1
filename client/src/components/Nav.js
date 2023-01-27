@@ -2,8 +2,6 @@ import React from 'react';
 // import logo from '../assets/images/fireLogoWhiteLetters.png';
 
 
-
-
 const Nav = ({user, setUser}) => {
 
   const handleLogout = () => {
