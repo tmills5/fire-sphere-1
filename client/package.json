@@ -2,7 +2,7 @@
   "name": "fire-sphere",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://fire-sphere.onrender.com",
+  "proxy": "http://localhost:3000",
   "engines": {
     "node": "16.x"
   },
