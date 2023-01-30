@@ -130,6 +130,7 @@ const Login = ({setUser}) => {
             />
             <input type="submit" value="Login" />
           </form>
+          <a href="/register">Register</a>
         </div>
       </div>
     </div>

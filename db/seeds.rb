@@ -39,7 +39,7 @@ puts "Seeding EMPLOYEES"
 # need to add hire date
 
 10.times do 
-  ranksArray = ['Chief', 'Assistant Chief', 'Battalion Chief', 'Captain', 'Lieutenant', 'Sergeant', 'Corporal', 'Firefighter']
+  ranksArray = ['Chief', 'Deputy Chief', 'Battalion Chief', 'Captain', 'Lieutenant', 'Sergeant', 'Corporal', 'Firefighter']
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   username = "#{first_name[0,1].capitalize}" + "#{last_name.downcase}"

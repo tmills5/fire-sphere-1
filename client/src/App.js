@@ -9,11 +9,12 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import RegistrationForm from './components/RegistrationForm';
 
 
 const App = () => {
   const [user, setUser] = useState('');
-  // const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
 
   // const [isLoading, setIsLoading] = useState(false);
 
@@ -74,6 +75,7 @@ console.log(user)
           <Route path='/' element={<Home /> } />
           <Route path='/login' element={<Login user={user} setUser={setUser}/>} />
           <Route path='/logout' element={<Logout setUser={setUser}/>} />
+          <Route path='/register' element={<RegistrationForm user={user} setUser={setUser} errors={errors} setErrors={setErrors}/>} />
         </Routes>
       </div>
     // </AuthConsumer>

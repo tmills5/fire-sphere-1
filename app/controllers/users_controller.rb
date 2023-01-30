@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  wrap_parameters format: []
+
 
   def index
     render json: User.all.order(:id)
@@ -9,7 +11,13 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    user = User.create!(user_params)
+    if user
+      session[:current_user] = user.id
+      render json: user, status: :created
+    else
+      render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -38,5 +46,8 @@ class UsersController < ApplicationController
 
   private
 
+  def user_params
+    params.permit(:id, :first_name, :last_name, :username, :password, :rank, :shift, :vehicle_id, :is_admin, :home_address)
+  end
 
 end
