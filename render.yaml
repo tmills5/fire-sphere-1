@@ -1,18 +1,22 @@
 databases:
-  - name: fire_sphere
-    databaseName: fire_sphere
-    user: fire_sphere_user
+  - name: postgres
+    ipAllowList: []
 
 services:
   - type: web
-    name: fire_sphere
+    name: rails
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: fire_sphere
-          property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
+      -key: DATABASE_URL
+        fromDatabase:
+          name: postgres
+          property: connectionString
+  - type: redis
+    name: redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: noeviction

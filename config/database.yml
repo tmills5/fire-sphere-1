@@ -81,4 +81,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  database: fire_sphere_1_production
+  username: fire_sphere_1
+  password: <%= ENV["FIRE_SPHERE_DATABASE_PASSWORD"] %>
