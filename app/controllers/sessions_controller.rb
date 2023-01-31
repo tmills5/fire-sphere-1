@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     # authenticate the user
     if user&.authenticate(params[:password])
       session[:current_user] = user.id
-      render json: user, status: :ok
+      render json: user.as_json, status: :ok
       puts "------HIT LOGIN---#{user.username}--"
     else
       render json: {error: "Invalid username or password"}, status: :unauthorized
