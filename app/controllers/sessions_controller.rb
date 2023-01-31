@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       render json: {error: "Invalid username or password"}, status: :unauthorized
     end
       # byebug
+      puts user
   end
 
   def destroy
