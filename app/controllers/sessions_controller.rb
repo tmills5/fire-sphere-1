@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:current_user] = user.id
       render json: user, status: :ok
+      puts "------HIT LOGIN---#{user.username}--"
     else
       render json: {error: "Invalid username or password"}, status: :unauthorized
     end
       # byebug
-      puts user
   end
 
   def destroy
