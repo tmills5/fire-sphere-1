@@ -22,7 +22,6 @@ const Login = ({setUser}) => {
   const onSubmit = e => {
     e.preventDefault();
 
-
     let user = {
       username,
       password
@@ -32,15 +31,17 @@ const Login = ({setUser}) => {
     method: "POST",
     headers:{'Content-Type': 'application/json'},
     body:JSON.stringify(user)
-  })
-  .then(res => res.json())
+  }) 
+
+  .then(res =>   //console.log(res))
+    res.json())
   .then(user => {
     setUser(user);
 
     // need the values from the object. user.error is an object but i need
     // it in an array
     if(user.error) setErrors(Object.values(user.error))
-    console.log("User Errors: ", user.error)
+    console.log("User Errors: ", errors)
   })
 
   setUsername('');
