@@ -2,9 +2,9 @@ class SessionsController < ApplicationController
 
   def create
     # find the user by username
-    user = User.find_by(username: params[:username])
+    user = User.find_by(username: user_params[:username])
     # authenticate the user
-    if user&.authenticate(params[:password])
+    if user&.authenticate(user_params[:password])
       session[:current_user] = user.id
       render json: user.as_json, status: :ok
       puts "------HIT LOGIN---#{user.username}--"

@@ -122,7 +122,7 @@ const Login = ({setUser}) => {
             <label>Password</label>
             <input
               type="password"
-              name="password"
+              name="userPassword"
               onChange={e => setPassword(e.target.value)}
               value={password}
               placeholder="Password"
