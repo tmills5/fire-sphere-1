@@ -32,7 +32,6 @@ const Login = ({setUser}) => {
     headers:{'Content-Type': 'application/json'},
     body:JSON.stringify(user)
   }) 
-
   .then(res =>   //console.log(res))
     res.json())
   .then(user => {
@@ -40,7 +39,8 @@ const Login = ({setUser}) => {
 
     // need the values from the object. user.error is an object but i need
     // it in an array
-    if(user.error) setErrors(Object.values(user.error))
+    // if(user.error) setErrors(Object.values(user.error))
+    if (user.error) setErrors(errors);
     console.log("User Errors: ", errors)
   })
 
@@ -132,6 +132,7 @@ const Login = ({setUser}) => {
             <input type="submit" value="Login" />
           </form>
           <a href="/register">Register</a>
+          {<p style={{ color: "red" }}>{errors}</p>}
         </div>
       </div>
     </div>
