@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     # find the user by username
     user = User.find_by(username: params[:username])
     # authenticate the user
-    if user&.authenticate(git params[:password])
+    if user&.authenticate(params[:password])
       session[:current_user] = user.id
       render json: user.as_json, status: :ok
       puts "------HIT LOGIN---#{user.username}--"
