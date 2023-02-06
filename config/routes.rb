@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#create'
+  #auth user on page load
   get '/me', to: 'users#show'
 
   # Routing logic: fallback requests for React Router.
