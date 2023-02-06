@@ -15,7 +15,7 @@ class VehiclesController < ApplicationController
 
   def show
     vehicle = find_vehicle_by_id
-    if vehicle.present?
+    if vehicle
       render json: vehicle
     else
       render json: {error: "Vehicle not found"}, status: :not_found

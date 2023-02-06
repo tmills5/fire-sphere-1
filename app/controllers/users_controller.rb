@@ -6,10 +6,6 @@ class UsersController < ApplicationController
     render json: User.all.order(:id)
   end
 
-  def new
-
-  end
-
   def create
     user = User.create!(user_params)
     if user
