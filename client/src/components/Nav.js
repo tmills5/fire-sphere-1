@@ -17,7 +17,7 @@ console.log("Nav user: ", user)
     <nav>
       <ul>
         <li><a href='/'>Home</a></li>
-        {user ? <p style={{"color": "red"}}>{user.username}</p> : null}
+        {user ? <a href="/users/:id" ><p style={{"color": "red"}}>{user.username}</p></a> : null}
         <li className="button"><a href='/login'>Login</a></li>
         <li><a href='/logout' onClick={handleLogout}>Logout</a></li>
       </ul>

@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import RegistrationForm from './components/RegistrationForm';
+import UserProfile from './components/UserProfile';
 
 
 const App = () => {
@@ -76,6 +77,8 @@ console.log(user)
           <Route path='/login' element={<Login user={user} setUser={setUser}/>} />
           <Route path='/logout' element={<Logout setUser={setUser}/>} />
           <Route path='/register' element={<RegistrationForm user={user} setUser={setUser} errors={errors} setErrors={setErrors}/>} />
+          <Route path='/users/:id' element={<UserProfile user={user}/>} />
+          {/* <Route path='/users/:id/edit' element={<EditUserProfile />} /> */}
         </Routes>
       </div>
     // </AuthConsumer>
