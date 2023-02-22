@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserProfile = ({ user }) => {
   const { first_name, last_name, username, rank, shift, is_admin, home_address, vehicle: {
-    id, designation, make, model, year, color, vin, station_id}} = user;
+    id, designation, make, model, year, color, vin, station_id} = {}} = user;
 
   console.log("UserProfile user: ", user)
   console.log("vehicle: ", id)
