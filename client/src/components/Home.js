@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./Header";
+import UserProfile from "./UserProfile";
 
 
-const Home = () => {
+const Home = ({user}) => {
   // console.log("Home User: ", user)
   return (
     <div id="home-parent">
@@ -11,12 +11,12 @@ const Home = () => {
         {/* left sidebar */}
         <div className="left-nav">
           <ul>
-            <a href='#'><li>Home</li></a>
-            <a href='#'><li>Profile</li></a>
-            <a href='#'><li>Messages</li></a>
-            <a href='#'><li>Assignment</li></a>
-            <a href='#'><li>Training</li></a>
-            <a href='#'><li>Leave</li></a>
+            <li><a href='/'>Profile</a></li>
+            <li><a href='/'>Messages</a></li>
+            <li><a href='/'>Assignment</a></li>
+            <li><a href='/'>Training</a></li>
+            <li><a href='/'>Leave Tracking</a></li>
+            <li><a href='/login' className='button'>Login</a></li>
           </ul>
         </div>
 
@@ -27,7 +27,7 @@ const Home = () => {
 
         {/* right sidebar */}
         <aside className="right-sidebar">
-          right nav with user pic and current info
+          {user ? <UserProfile user={user} /> : ''}
         </aside>
       </main>
     </div>

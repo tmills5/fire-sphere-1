@@ -14,6 +14,7 @@ import RegistrationForm from './components/RegistrationForm';
 import UserProfile from './components/UserProfile';
 
 
+
 const App = () => {
   const [user, setUser] = useState('');
   const [errors, setErrors] = useState([]);
@@ -32,6 +33,13 @@ const App = () => {
       }
     })
   },[]);
+
+  // const handleLogout = () => {
+  //   fetch('/logout', {
+  //     method: 'DELETE'
+  //   })
+  //     .then(setUser());
+  // }
 
   // const options = {
   //   method: 'GET',
@@ -75,9 +83,8 @@ console.log(user)
         <Header />
         <Nav user={user} setUser={setUser} />
 
-
         <Routes>
-          <Route path='/' element={<Home /> } />
+          <Route path='/' element={<Home user={user}/> } />
           <Route path='/login' element={<Login user={user} setUser={setUser}/>} />
           <Route path='/logout' element={<Logout setUser={setUser}/>} />
           <Route path='/register' element={<RegistrationForm user={user} setUser={setUser} errors={errors} setErrors={setErrors}/>} />
