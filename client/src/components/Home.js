@@ -9,13 +9,26 @@ const Home = () => {
       {/* <Header /> */}
       <main>
         {/* left sidebar */}
-        <aside className="left-sidebar"></aside>
+        <div className="left-nav">
+          <ul>
+            <a><li>Home</li></a>
+            <a><li>Profile</li></a>
+            <a><li>Messages</li></a>
+            <a><li>Assignment</li></a>
+            <a><li>Training</li></a>
+            <a><li>Leave</li></a>
+          </ul>
+        </div>
 
         {/* center content */}
-        <article className="center-content"></article>
+        <article className="center-content">
+          News and events and whatever user renders
+        </article>
 
         {/* right sidebar */}
-        <nav className="right-nav"></nav>
+        <aside className="right-sidebar">
+          right nav with user pic and current info
+        </aside>
       </main>
     </div>
   );
