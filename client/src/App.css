@@ -39,13 +39,13 @@ nav {
   /* font-family: var(--serif); */
   font-size: 100%;
   list-style-type: none;
-  padding: 1rem;
+  padding: 0.5;
   background-color: var(--accent1);
 }
 
 nav ul {
   list-style-type: none;
-  padding: 0;
+  padding: 0.5rem;
   margin: 0;
   display: flex;
   flex-flow: row wrap;
@@ -87,21 +87,35 @@ header {
   background-color: var(--accent1);
 }
 
-/* header img {
-  height: 12.5rem;
-} */
+.header-img-mobile {
+  height: 15rem;
+}
 
 .header-img-full {
   display: none;
-  height: 12.5rem;
 }
 
+#home-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+#home-parent main {
+  /* Take the remaining height */
+  flex-grow: 1;
+
+  /* Layout the left sidebar, main content and right sidebar */
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
 /* !Responsive -------Navbar and Home ---------------------* */
 
 @media (min-width: 850px) {
   nav {
     max-width: 1600px;
     margin: 0 auto;
+    /* padding: 1rem; */
   }
 
   nav li:first-child {
@@ -124,7 +138,7 @@ header {
   .header-img-full {
     display: block;
   }
-  
+
   .header-img-mobile {
     display: none;
   }
