@@ -83,7 +83,18 @@ a:hover {
 
 
 /* ---------------HOME----------------- */
+header {
+  background-color: var(--accent1);
+}
 
+/* header img {
+  height: 12.5rem;
+} */
+
+.header-img-full {
+  display: none;
+  height: 12.5rem;
+}
 
 /* !Responsive -------Navbar and Home ---------------------* */
 
@@ -103,19 +114,49 @@ a:hover {
     height: 200px;
     max-width: 1600px;
     margin: 0 auto;
-
     background-image: url("https://images.pexels.com/photos/580117/pexels-photo-580117.png?auto=compress&cs=tinysrgb&w=1600");
     background-position: center;
     background-repeat: no-repeat;
     border-bottom-left-radius: 50% 40%;
-    border-bottom-right-radius: 50% 40%;
     display: flex;
   }
+
+  .header-img-full {
+    display: block;
+  }
   
-  header img {
-    height: 12.5rem;
+  .header-img-mobile {
+    display: none;
   }
 
+  #home-parent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #home-parent main {
+    /* Take the remaining height */
+    flex-grow: 1;
+
+    /* Layout the left sidebar, main content and right sidebar */
+    display: flex;
+    flex-direction: row;
+    height: 75vh;
+  }
+
+  .left-sidebar {
+    width: 25%;
+    border: 1px solid black;
+  }
+
+  .center-content {
+    flex-grow: 1;
+  }
+
+  .right-nav {
+    width: 20%;
+  }
+  
 }
 
 /* ---------------LOGIN----------------- */

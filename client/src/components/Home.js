@@ -5,12 +5,19 @@ import Header from "./Header";
 const Home = () => {
   // console.log("Home User: ", user)
   return (
-    <>
-      <Header />
+    <div id="home-parent">
+      {/* <Header /> */}
       <main>
-        HOME
+        {/* left sidebar */}
+        <aside className="left-sidebar"></aside>
+
+        {/* center content */}
+        <article className="center-content"></article>
+
+        {/* right sidebar */}
+        <nav className="right-nav"></nav>
       </main>
-    </>
+    </div>
   );
 }
 

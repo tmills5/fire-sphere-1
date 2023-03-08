@@ -5,6 +5,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
 // Components
+import Header from './components/Header';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Login from './components/Login';
@@ -71,7 +72,10 @@ console.log(user)
   return (
     // <AuthConsumer>
       <div className="App">
+        <Header />
         <Nav user={user} setUser={setUser} />
+
+
         <Routes>
           <Route path='/' element={<Home /> } />
           <Route path='/login' element={<Login user={user} setUser={setUser}/>} />
