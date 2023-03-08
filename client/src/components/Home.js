@@ -11,12 +11,12 @@ const Home = () => {
         {/* left sidebar */}
         <div className="left-nav">
           <ul>
-            <a><li>Home</li></a>
-            <a><li>Profile</li></a>
-            <a><li>Messages</li></a>
-            <a><li>Assignment</li></a>
-            <a><li>Training</li></a>
-            <a><li>Leave</li></a>
+            <a href='#'><li>Home</li></a>
+            <a href='#'><li>Profile</li></a>
+            <a href='#'><li>Messages</li></a>
+            <a href='#'><li>Assignment</li></a>
+            <a href='#'><li>Training</li></a>
+            <a href='#'><li>Leave</li></a>
           </ul>
         </div>
 
