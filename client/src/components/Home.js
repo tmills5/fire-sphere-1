@@ -1,15 +1,16 @@
 import React from "react";
-
+import Header from "./Header";
 
 
 const Home = () => {
   // console.log("Home User: ", user)
   return (
-  <main>
-    <header>
-
-    </header>
-  </main>
+    <>
+      <Header />
+      <main>
+        HOME
+      </main>
+    </>
   );
 }
 

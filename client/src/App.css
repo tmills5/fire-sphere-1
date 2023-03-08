@@ -81,7 +81,12 @@ a:hover {
   height: 100px;
 }
 
-/* * Responsive * */
+
+/* ---------------HOME----------------- */
+
+
+/* !Responsive -------Navbar and Home ---------------------* */
+
 @media (min-width: 850px) {
   nav {
     max-width: 1600px;
@@ -93,18 +98,24 @@ a:hover {
     text-align: left;
     margin-right: auto;
   }
-}
 
-/* ---------------HOME----------------- */
-header {
-  height: 200px;
-  width: auto;
-  background-image: url("https://images.pexels.com/photos/580117/pexels-photo-580117.png?auto=compress&cs=tinysrgb&w=1600");
-  /* background-size: cover; */
-  background-position: center;
-  background-repeat: no-repeat;
-  border-bottom-left-radius: 50% 40%;
-  border-bottom-right-radius: 50% 40%;
+  header {
+    height: 200px;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    background-image: url("https://images.pexels.com/photos/580117/pexels-photo-580117.png?auto=compress&cs=tinysrgb&w=1600");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 50% 40%;
+    border-bottom-right-radius: 50% 40%;
+    display: flex;
+  }
+  
+  header img {
+    height: 12.5rem;
+  }
+
 }
 
 /* ---------------LOGIN----------------- */
